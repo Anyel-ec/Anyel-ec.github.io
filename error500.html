@@ -40,22 +40,62 @@
 <body>
 
     <!-- Barra de navegación -->
-    <div class="scene">
-        <div class="overlay"></div>
-        <div class="overlay"></div>
-        <div class="overlay"></div>
-        <div class="overlay"></div>
-        <span class="bg-403">500</span>
-        <div class="text">
-            <span class="hero-text"></span>
-            <span class="msg">El servidor está teniendo una conversación seria con los cables. ¡Esperamos que lleguen a un acuerdo!</span>
-            <span>@anyel-ec</span>
-            <span class="support">
-                <a href="#500" id="openModal">Soporte de Contacto</a>
-            </span>
-        </div>
-        <div class="lock"></div>
+    <!-- Barra de navegación -->
+<div class="scene">
+    <div class="overlay"></div>
+    <div class="overlay"></div>
+    <div class="overlay"></div>
+    <div class="overlay"></div>
+    <span class="bg-403">500</span>
+    <div class="text">
+        <span class="hero-text"></span>
+        <span class="msg" id="errorMessage">El servidor está teniendo una conversación seria con los cables. ¡Esperamos que lleguen a un acuerdo!</span>
+        <span>@anyel-ec</span>
+        <span class="support">
+            <a href="#500" id="openModal">Soporte de Contacto</a>
+        </span>
     </div>
+    <div class="lock"></div>
+</div>
+
+<script>
+    // Array de mensajes de broma
+    var jokeMessages = [
+        "Error 500: El servidor está en huelga, exige más café.",
+        "¡Oh no! Parece que alguien pisó un cable. Estamos buscando el culpable.",
+        "Error 500: El servidor está de vacaciones, se fue a la playa de datos.",
+        "El servidor está practicando sus chistes para hacer reír a los bits.",
+        "Error 500: Los cables y el servidor están en una terapia de pareja. ¡Esperamos que funcione!",
+        "¡Ups! Algo salió mal, pero no te preocupes, estamos trabajando en ello.",
+        "Error 500: Parece que el servidor olvidó su contraseña. Está tratando de recordarla.",
+        "El servidor está tomando una siesta de 500 segundos. Vuelve pronto.",
+        "Error 500: Estamos jugando al escondite con el servidor. ¿Puedes encontrarlo?",
+        "El servidor está ocupado contando bytes. ¡Es un trabajo agotador!"
+    ];
+
+    // Función para obtener un mensaje aleatorio
+    function getRandomJokeMessage() {
+        var randomIndex = Math.floor(Math.random() * jokeMessages.length);
+        return jokeMessages[randomIndex];
+    }
+
+    // Función para cambiar el mensaje cada 15 segundos
+    function changeRandomJokeMessage() {
+        var msgElement = document.querySelector(".msg");
+
+        setInterval(function () {
+            var randomMessage = getRandomJokeMessage();
+            msgElement.textContent = randomMessage;
+        }, 10000);
+
+        // Cambia el mensaje inicial de forma aleatoria
+        msgElement.textContent = getRandomJokeMessage();
+    }
+
+    // Llama a la función para iniciar el cambio de mensajes
+    changeRandomJokeMessage();
+</script>
+
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
