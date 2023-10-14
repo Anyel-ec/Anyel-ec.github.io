@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Códigos para copiar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Códigos para copiar</h1>
+        <p class="text-center">Selecciona un código y haz clic en el botón "Copiar" para copiarlo al portapapeles.</p>
+
+        <div class="code-container">
+            <input class="form-control code-input" type="text" value="MC60H-DWHD5-H80U9-6V85M-8280D" id="codigo1">
+            <button class="btn btn-primary" onclick="copiarCodigo('codigo1')">Copiar</button>
+        </div>
+
+        <div class="code-container">
+            <input class="form-control code-input" type="text" value="4A4RR-813DK-M81A9-4U35H-06KND" id="codigo2">
+            <button class="btn btn-primary" onclick="copiarCodigo('codigo2')">Copiar</button>
+        </div>
+
+        <div class="code-container">
+            <input class="form-control code-input" type="text" value="NZ4RR-FTK5H-H81C1-Q30QH-1V2LA" id="codigo3">
+            <button class="btn btn-primary" onclick="copiarCodigo('codigo3')">Copiar</button>
+        </div>
+
+        <div class="code-container">
+            <input class="form-control code-input" type="text" value="JU090-6039P-08409-8J0QH-2YR7F" id="codigo4">
+            <button class="btn btn-primary" onclick="copiarCodigo('codigo4')">Copiar</button>
+        </div>
+
+        <div class="code-container">
+            <input class="form-control code-input" type="text" value="4Y09U-AJK97-089Z0-A3054-83KLA" id="codigo5">
+            <button class="btn btn-primary" onclick="copiarCodigo('codigo5')">Copiar</button>
+        </div>
+
+        <div class="code-container">
+            <input class="form-control code-input" type="text" value="4C21U-2KK9Q-M8130-4V2QH-CF810" id="codigo6">
+            <button class="btn btn-primary" onclick="copiarCodigo('codigo6')">Copiar</button>
+        </div>
+
+        <!-- Alerta de éxito -->
+        <div class="alert alert-success mt-3" id="alerta-copiado" style="display: none;">
+            Código copiado al portapapeles.
+        </div>
+    </div>
+
+    <script>
+        function copiarCodigo(id) {
+            var codigo = document.getElementById(id);
+            codigo.select();
+            codigo.setSelectionRange(0, 99999);
+
+            document.execCommand("copy");
+
+            // Muestra la alerta de éxito
+            var alerta = document.getElementById("alerta-copiado");
+            alerta.style.display = "block";
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
