@@ -1,40 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chatbot Simple</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<body>
-    <h1>Chatbot Simple</h1>
-    <div id="chat-container">
-        <div class="chat-message user-message">
-            <div class="message-text">Hola, ¿en qué puedo ayudarte?</div>
-        </div>
-    </div>
-    <div id="user-input">
-        <input type="text" id="user-message" placeholder="Escribe un mensaje">
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
-    <script>
-        function sendMessage() {
-            var userMessage = document.getElementById("user-message").value;
-            var chatContainer = document.getElementById("chat-container");
-
-            // Agregar mensaje del usuario
-            var userMessageDiv = document.createElement("div");
-            userMessageDiv.className = "chat-message user-message";
-            userMessageDiv.innerHTML = '<div class="message-text">' + userMessage + '</div>';
-            chatContainer.appendChild(userMessageDiv);
-
-            // Responder al mensaje del usuario (respuesta simple)
-            var botResponse = "Gracias por tu mensaje. Soy un chatbot simple.";
-            var botMessageDiv = document.createElement("div");
-            botMessageDiv.className = "chat-message bot-message";
-            botMessageDiv.innerHTML = '<div class="message-text">' + botResponse + '</div>';
-            chatContainer.appendChild(botMessageDiv);
-
-            // Limpiar el campo de entrada del usuario
-            document.getElementById("user-message").value = "";
+<body id="body">
+    <style>
+        .modo-oscuro{
+            background-color: black;
+            color: white;
         }
+    </style>
+    <div style="text-align: center; margin-top: 300px;">
+        <input type="checkbox" name="" id="modoOscuro" style="transform: scale(3);">
+    </div>
+    <footer id="footer"> Hola</footer>
+    <script>
+        var modoOscuro = document.getElementById('modoOscuro');
+        var elementos = [
+            document.getElementById('body'),
+            document.getElementById('footer')
+        ];
+        modoOscuro.addEventListener("click", function(){
+            elementos.forEach(function(elementos){
+                elementos.classList.toggle('modo-oscuro');
+            })
+        })
+
     </script>
+
 </body>
 </html>
