@@ -62,7 +62,7 @@
                             </label>
                           </li>
                         <!-- Enlaces del menú -->
-                        <li class="nav-item"><a id="texto-servicio" class="nav-link" href="#services">Servicio</a></li>
+                        <!-- <li class="nav-item"><a id="texto-servicio" class="nav-link" href="#services">Servicio</a></li> -->
                         <li class="nav-item"><a id="texto-portafolio" class="nav-link" href="#portfolio">Portafolio</a></li>
                         <li class="nav-item"><a id="texto-historia" class="nav-link" href="#about">Historia</a></li>
                         <li class="nav-item"><a id="texto-contacto" class="nav-link" href="#team">Contacto</a></li>
@@ -83,58 +83,7 @@
         </nav>
         <header class="masthead" id="fondo" style="background-color: rgb(19, 18, 18);">
             <div class="container">
-                <!-- Espacios en blanco -->
-                <style>
-                    .h-animate .txt {
-                        position: relative;
-                        color: #0077b6;
-                        font-size: 50px;
-                        font-weight: 600;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        width: 0;
-                    }
-    
-                    .h-animate .txt.first-txt {
-                        color: #FFF;
-                    }
-    
-                    @keyframes animate {
-                        0%, 60% {
-                            width: 0;
-                        }
-                        100% {
-                            width: 100%;
-                        }
-                    }
-    
-                    @keyframes cursor {
-                        0%, 100% {
-                            border-right: 2px solid #0077b6;
-                        }
-                        50% {
-                            border-right: 2px solid transparent;
-                        }
-                    }
-                    @keyframes cursor-blink {
-                    0%, 100% {
-                        opacity: 1;
-                    }
-                    50% {
-                        opacity: 0;
-                    }
-                }
-
-                .cursor {
-                    display: inline-block;
-                    width: 2px;
-                    height: 1em;
-                    background-color: #000;
-                    animation: cursor-blink 0.7s infinite;
-                }
-    
-                    </style>
-                    
+                              
     
                     <!-- Espacios en blanco -->
                     <div class="h-txt">
@@ -146,53 +95,7 @@
                     </div>
     
                     <script>
-                    const text = document.querySelector(".sec-txt");
-                    const cursor = document.querySelector(".cursor");
-                    const words = ["Developer", "Full Stack", "Data Analyst", "Cybersecurity Analyst", "Support IT"];
-                    let index = 0;
-    
-                    const typeText = (word, callback) => {
-                        let i = 0;
-                        const typing = setInterval(() => {
-                            text.textContent += word[i];
-                            i++;
-                            if (i >= word.length) {
-                                clearInterval(typing);
-                                cursor.style.display = "inline-block";
-                                callback();
-                            }
-                        }, 100);
-                    };
-    
-                    const deleteText = (callback) => {
-                        let word = text.textContent;
-                        let i = 0;
-                        const deleting = setInterval(() => {
-                            text.textContent = word.slice(0, word.length - i);
-                            i++;
-                            if (i > word.length) {
-                                clearInterval(deleting);
-                                cursor.style.display = "none";
-                                callback();
-                            }
-                        }, 100);
-                    };
-    
-                    const textLoad = () => {
-                        deleteText(() => {
-                            let word = words[index];
-                            typeText(word, () => {
-                                setTimeout(() => {
-                                    deleteText(() => {
-                                        index = (index + 1) % words.length;
-                                        textLoad();
-                                    });
-                                }, 1000);
-                            });
-                        });
-                    };
-    
-                    textLoad();
+                    
                     </script>
                     
                 <!-- Título principal -->
@@ -200,44 +103,12 @@
                     <br>
                 </div>
                 <!-- Botón "Comenzar" -->
-                <a class="btn btn-primary btn-xl text-uppercase animate-text" id="boton" href="#services">
+                <a class="btn btn-primary btn-xl text-uppercase animate-text" id="boton" href="#portfolio">
                     
                     Comenzar</a>
             </div>
         </header>
-                <!-- Sección de Servicios -->
-        <!-- <section class="page-section" id="services">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase" id="servicios">Servicios</h2>
-                    
-                    <h3 class="section-subheading text-muted" id="a1">Excelencia de Extremo a Extremo.</h3>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <img src="assets/img/comercio-electronico.png" alt="" width="">
-                        </span>
-                        <h4 class="my-3" >Community Manager</h4>
-                        <p class="text-muted" id="a2">Las estrategias de marketing digital que utilizan herramientas de Tecnologías de la Información son fundamentales para el éxito de cualquier negocio en la actualidad. Un Community Manager capacitado en estas técnicas puede ayudar a mejorar la presencia en línea y a llegar a un público más amplio</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <img src="assets/img/soporte-tecnico.png" alt="">
-                        </span>
-                        <h4 class="my-3" id="a3">Soporte de TI</h4>
-                        <p class="text-muted" id="a4">Brindamos soporte a los usuarios en Tecnologías de la Información, en áreas como redes de comunicación, interconexión de redes, sistemas operativos, administración de servicios y seguridad de la información.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <img src="assets/img/analista-de-la-red.png" alt="">
-                        </span>
-                        <h4 class="my-3" id="a5">Analista de Datos</h4>
-                        <p class="text-muted" id="a6">Realizamos análisis de datos de gran volumen, los procesamos y convertimos en información útil para la toma de decisiones. Contamos con herramientas especializadas, como las de IBM, Excel, lenguajes de consulta y programación, para llevar a cabo este proceso de manera eficiente y efectiva.</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+                
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
         <div class="text-center">
